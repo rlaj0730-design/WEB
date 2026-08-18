@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table태그 : 데이터를 표 형식으로 표시하는 태그
+       border 속성 : 테이블(표)의 테두리를 지정하는 속성
+    
+    -->
+    <!-- 테이블을 만들겠다 공간 선언 -->
+    <table border="1">
+        <!-- 표의 제목을 표기할때 쓰는 태그 caption -->
+        <caption>메뉴판</caption>
+        <!-- 표의 행(한 줄)을 정의하는 태그 tr -->
+        <tr>
+            <!-- 표안 내용들의 제목 : th(테이블 헤더) 글자가 굵게 표시됨 -->
+            <th colspan="2">메뉴</th>
+            <!-- <th>가격</th> -->
+        </tr>
+
+        <tr>
+            <!-- 줄안에 칸을 만드는 태그 : td -->
+            <td>아메리카노</td>
+            <td rowspan="2">3500</td>
+        </tr>
+
+        <tr>
+            <td>카페라떼</td>
+            <!-- <td>4000</td> -->
+        </tr>
+
+        <!-- 표 병합 처리
+            rowspan : 위, 아래를 병함 (행 병합)
+            colspan : 좌, 우를 병합 (열 병합) 
+        -->
+    </table>
+
+    <!-- table 태그 실습 -->
+     <!-- bgcolor = '원하는 색상' -->
+     <table border="1">
+        <tr bgcolor="lightgreen">
+            <th>이름</th>
+            <th colspan="2">성별/주소</th>
+            <!-- <th>주소</th> -->
+            <th>비고</th>
+        </tr>
+        <!-- td*4 해도 됨 -->
+            <td>박나람</td>
+            <td>남자</td>
+            <td>서울</td>
+            <td rowspan="4"></td>
+        </tr>
+        <tr>
+            <td>김산하</td>
+            <td>남자</td>
+            <td>광주</td>
+            
+        </tr>
+        <tr>
+            <td>박상민</td>
+            <td>여자</td>
+            <td>제주도</td>
+            
+        </tr>
+        <tr>
+            <td>나통구</td>
+            <td>남자</td>
+            <td>대구</td>
+            
+        </tr>
+
+        
+
+     </table>
+</body>
+</html>

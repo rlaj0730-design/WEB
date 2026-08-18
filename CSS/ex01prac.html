@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  -->
+    <style>
+        /* 
+            CSS 적용하기
+            선택자 {}
+                태그 선택자 : 태그의 이름을 사용하는 방식 - 1점(명시도 순위. 숫자가 작을수록 우선순위가 낮음)
+                전체 선택자 : *를 사용하는 방식 - 0점
+        */
+
+        /* h1 {
+            color: blue;
+        }
+
+        h2 {
+            color: aqua;
+            background-color: red;
+        } */
+
+        * {
+            color: green;
+        }
+
+        /* 클래스 선택자 : .클래스이름 - 명시도 순위10점
+            ex) .dinner
+            값의 중복사용이 가능하다 -> 여러 태그에 적용 가능. 재사용성이 높음
+        */
+        .dinner {
+            color: yellow;
+        }
+
+        /* 아이디 선택자 : #아이디속성의값 - 명시도 순위 100점
+            ex) #salmon
+            값의 중복사용이 불가능하다 -> 한 태그에만 적용 가능. 재사용성이 낮음  -> 한 문서당 한개만 존재해야 하는 요소들에 사용
+            ->ex) 로고, 검색창, 상단바 등
+        */
+        #tuna {
+            color: black !important; /* !important : 명시도 순위가 인라인 스타일보다 높다. 최고점수. */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 확인하기</h1>
+    <h2>CSS 적용하기</h2>
+    <!-- 아이디, 클래스 선택자 적용 -->
+      <h1>CSS</h1>
+    <p>웹페이지를 꾸며주는 스타일 시트 언어</p>
+    <ul>
+        <li>CSS 기본구조</li>
+        <li>CSS 선택자</li>
+        <li>CSS 스타일</li>
+    </ul>
+
+    <h1 class="dinner">오늘 뭐먹지?</h1>
+    <ul>
+        <li class="dinner" id="salmon">연어</li>
+        <!-- 인라인 스타일 방식 => 태그안에 style 속성 추가 = 명시도 순위 1000점 -->
+        <li class="dinner" id="tuna" style="color: pink;">참치</li>
+        <li class="dinner" id="salad">샐러드</li>
+    </ul>
+</body>
+</html>

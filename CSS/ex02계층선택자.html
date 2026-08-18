@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 계층선택자 사용하기
+            1. 기준 2. 관계에 따른 기호 3. 접근 대상
+
+            자손 선택자 : 띄어쓰기
+            자식 선택자 : >
+        */
+
+        /* div를 기준으로 자손관계인 span접근 */
+        div span {
+            color: blue;
+        }
+
+        /* ol태그를 기준으로 자식관계인 span의 색 변경 */
+        ol>span {
+            color: red;
+        }
+
+        /* 형재관계인 요소들의 색 변경
+            첫번째 li를 기준으로 형제관게인 li의 색 변경 
+            형제(후행)선택자 : 기준 ~  끝    
+        */
+
+        li~li {
+            color: chocolate
+        }
+
+        /* 
+            li를 기준으로 근접해서 붙어있는 li의 색 변경 
+            근접형제(후행) 선택자 :기준 + 끝
+        */
+        li+li {
+            color:blueviolet;
+        }
+
+        /*  nth-child(n)
+            부모의 자식 요소 중 n번째인 요소를 선택
+            모든 자식요소의 순서를 확인 -> n번째 자식이면서 태그가 일치하는 경우에 선택자가 적용됨
+        */
+
+        li:nth-child(4)+li {
+            color:chartreuse
+        }
+    </style>
+</head>
+<body>
+     <div>
+        <strong>우리 반 규칙!</strong>
+        <ol>
+            <li>지각하지 않기!</li>
+            <li>결석하지 않기!</li>
+            <span>불가피할 땐 영우쌤한테 꼭 연락하기!</span>
+            <li>외출하지 않기!</li>
+            <li>복습하기!</li>
+        </ol>
+    </div>
+</body>
+</html>
