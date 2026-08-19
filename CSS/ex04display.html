@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p, span {
+            width: 200px;
+            height: 200px;
+        } */
+
+        /* display - block
+            종류 : div, p, table ...등등 => 기본 값 block
+            가로로 한줄의 영역을 차지하는 속성
+            width, height 값 설정이 가능하다
+        */
+
+        /* p {
+            background-color: blueviolet;
+            
+        } */
+
+        /* display - inline 
+            종류 : img, span, a, b 등등 => 기본 값 inline
+            내가 담은 컨텐츠까지만 크기(영역)로 삼는 속성
+            width, height 값 설정이 불가능 하다.
+        */
+
+        /* span {
+            background-color: aquamarine;
+            width: 200px;
+            height: 500px;
+            
+        } */
+
+        /* 
+            none : 화면에 출력된 요소를 안보이게끔 처리
+        */
+
+        .answer {
+            display: none;
+        }
+
+        /* 선택자 적용 실습
+            질문지 위에 마우스를 올리면 옆에 있는 답을 보이게끔 처리하기
+            span태그의 display속성의 기본값으로 적용하기
+        */
+
+        .question:hover + .answer {
+            display: inline;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <p>p태그</p>
+    <p>p태그</p>
+    <p>p태그</p>
+
+    <span>span태그</span>
+    <span>span태그</span>
+    <span>span태그</span>
+
+    <h3>display : none </h3>
+    <span class="question">Q. 여러분의 최애 음료는 무엇인가요?</span>
+    <span class="answer">A. 아이스아메리카노, 바닐라라떼</span>
+
+    <br>
+    <span class="question">Q. 여러분의 mbti가 무엇인가요?</span>
+    <span class="answer">A.ISTJ</span>
+</body>
+</html>

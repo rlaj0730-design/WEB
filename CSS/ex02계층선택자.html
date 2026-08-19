@@ -47,6 +47,24 @@
         li:nth-child(4)+li {
             color:chartreuse
         }
+
+        /* 반응선택자 : hover, active
+            hover : 커서를 가져다 댔을 때 반응하는 선택자
+            active : 마우스를 클릭했을 때
+
+            그룹선택자 : 사용기호(,)
+        */
+        h1:hover {
+            color: red;
+        }
+
+        h2:active {
+            color: blue;
+        }
+
+        h2,h3 {
+            color:brown;
+        }
     </style>
 </head>
 <body>
@@ -60,5 +78,9 @@
             <li>복습하기!</li>
         </ol>
     </div>
+
+    <h1>css 추가 선택자</h1>
+    <h2>그룹 선택자</h2>
+    <h3>반응 선택자</h3>
 </body>
 </html>

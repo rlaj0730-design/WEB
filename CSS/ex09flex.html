@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            flex : 레이아웃 배치 전용 기능
+            부모 요소 : container
+            자식 요소 : item
+        */
+
+        .container {
+            background-color: whitesmoke;
+            height: 500px;
+            /* 부모요소에서 flex적용 
+               flex가 적용되면 가로로 자식요소들이 배치가 된다
+            */
+            display: flex;
+
+            /* 배치 방향 설정
+               메인축 row로 해놓으면 메인축이 row(가로축)이 되고 서브축이 세로축이 된다. 반대는 column
+               서브축
+            */
+            flex-direction: row;
+
+            /* 
+                메인축 기준 아이템 정렬
+            */
+            justify-content: center;
+
+            /* 서브축 기준 아이템 정렬 */
+            align-items: center;
+
+        }
+
+        .item {
+            background-color: lightskyblue;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+
+            /* 자식요소에게 작성하는 내용 */
+            flex-basis: 15%;
+        }
+
+        #center {
+            flex-basis: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item" id="center"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

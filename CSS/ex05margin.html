@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #box1 {
+            background-color: yellow;
+            border: solid 1px black;
+            /* 
+            margin : 경계선(border)을 기준으로 바깥 여백
+            값을 1개 넣었을 때 : 위, 아래, 좌, 우 모두 동일한 값으로 적용된다
+            값을 2개 넣었을 때 : 첫번째 값 -> 위, 아래 / 두번째 값 -> 좌, 우로 적용된다
+            값을 3개 넣었을 때 : 첫 번쨰 값 -> 위 / 두번째 값 -> 좌, 우 / 세번째 값 -> 아래에 적용된다
+            값을 4개 넣었을 떄 : 시계방향으로 순차 적용이된다(위부터)
+            margin-방향(위,아래,좌,우) : 원하는 위치에 마진 속성을 주는 방식
+            */
+            /* margin: 20px 30px 10px 40px; */
+            /* margin-left: 30px; */
+        }
+
+        #box2 {
+            background-color: blue;
+            border: solid 1px black;
+            margin-left: 100px;
+        }
+
+        #box3 {
+            background-color: green;
+            border: solid 1px black;
+            margin-left: 200px;
+        }
+
+        #box4 {
+            background-color: gray;
+            border: solid 1px black;
+            margin-left: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+</body>
+</html>
