@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 단순 if문 : 조건이 참일때만 실행하는 조건문. 거짓이면 실행 안함
+        let num = 10;
+
+        if(num > 5) {
+            console.log('정답');
+        }
+
+        // if ~ else문 : 조건이 참이면 if절 실행, 거짓이면 else절 실행
+        let money = 5000;
+
+        if(money >= 10000) {
+            console.log('돈을 출금한다');
+        }else{
+            console.log('돈을 저금한다.');
+        }
+
+        // if절 외에 조건을 추가할 때 -> else if(파이썬에서는 elif)
+        let num1 = parseInt(prompt('첫 번쨰 숫자를 입력하세요!'));
+        let num2 = parseInt(prompt('두 번쨰 숫자를 입력하세요!'));
+
+        if(num1 > num2){
+            console.log('첫 번째 입력한 값이 더 큰 수 입니다.')
+        }
+        else if(num2 > num1){
+            console.log('두 번째 입력한 값이 더 큰 수 입니다.')
+        }
+        else{
+            console.log('두 수는 같습니다.')
+        }
+
+        // switch문 : 조건식(스위치문은 조건식 대신 결과값을 많이 넣음.)과 case문 안에 있는 값을 비교해서 처리하는 구문
+        switch(5){
+            case 0:
+                alert('짝수')
+                break;
+            case 1:
+                alert('홀수')
+                break;
+            default :
+                alert('코드 끝')
+                break;
+        }
+        // 변수 지정 스위치문
+        let switch_num = parseInt(prompt('숫자 확인~'));
+
+        switch(switch_num % 2){
+            case 0:
+                console.log('짝수입니다.')
+                break;
+            case 1:
+                console.log('홀수입니다.')
+                break;
+            default :
+                console.log('숫자를 다시 입력하세요.')
+                break;
+        }   
+            
+        
+    </script>
+</body>
+</html>

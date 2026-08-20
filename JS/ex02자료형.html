@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // -----------------------------원시 자료형(기본 자료형)-----------------------------------
+        // 자료형 - 숫자형
+        // 정수 : 0, 1, 2, -1
+        // 실수 : 3.14, 2.53
+        let num1 = 2;
+        let num2 = 5.33
+        console.log(num1, num2)
+
+        // 자료형 - 문자열
+        // " " 큰 따옴표, ' ' 작은 따옴표
+        let str1 = "JavaScript"
+        let str2 = 'htmlcss'
+        console.log(str1, str2);
+
+        // 자료형 - 논리형(Boolean)
+        // 참(true), 거짓(false) 2가지로 표현
+        let login = true;
+        let logout = false;
+        console.log(login, logout);
+
+        // 자료형 - undefined, null
+        // undefined : 데이터의 자료형, 값 모두 없는 경우에 표현
+        // null : 의도적으로 비움을 명시할 때 사용(자료형 => 객체)
+        let empty;
+        let isNull = null;
+        console.log(empty, isNull);
+
+        // typeof(자료형의 타입을 확일할 때 사용)
+        console.log(typeof(isNull), typeof(empty));
+
+        // 자료형 - 배열[]
+        // 여러개의 데이터(같은자료형)를 하나의 공간에 저장하는 형태
+        let array = [1, 2, 3];
+        console.log(array);
+
+        // 자료형 - 객체{}
+        // 여러 자료형의 데이터를 하나로 묶어서 저장하는 형태
+        // key : value 형태를 유지
+        let obj = {
+            name : 'park',
+            age : 20
+        }
+        console.log(obj);
+
+        // 형 변환 - 자동 형 변환(숫자형태를 문자형태로 변환함.)
+        console.log(10 + '10');
+
+        // 형 변환 - 강제 형 변환
+        // 숫자형으로 변환 시키기 - Number
+        // 정수형으로 변환 시키기 - parseInt()
+        // 실수형 - paraseFloat()
+        console.log(10 + Number('10'));
+        console.log(10 + parseInt('10.5'));
+        console.log(10 + parseFloat('10.5'));
+
+        // 문자열 강제 형 변환( 타입 오브 써서 확인할수 있음 console.log(typeof(String(strnum)) );)
+        // String()
+        // 숫자형 데이터가 담긴 변수. toString()
+        // 숫자형 데이터가 담긴 변수. toFixed(소수점 자리수만큼 표현)
+        let strnum = 10;
+        console.log(String(strnum)  );
+
+        let strnum1 = 15;
+        console.log(strnum1.toString());
+
+        // 소수점 자리 잘라서 문자로 바꿔주는 자료형. 
+        let strnum2 = 3.1456;
+        console.log(strnum2.toFixed(3))
+
+        // 형 변환 실습
+        let fnum = prompt('첫 번째 숫자를 입력하세요');
+        let snum = prompt('두 번째 숫자를 입력하세요');
+        let ssum = fnum + snum
+        let sum = Number(fnum) + Number(snum)
+        console.log('두 숫자를 더한 결과:' + ssum);
+        console.log('두 숫자를 더한 결과:' + sum);
+        
+        // 형 변환 실습 선생님 풀이
+        let input_num1 = prompt('첫 번째 숫자입력');
+        let input_num2 = prompt('두 번째 숫자입력');
+
+        console.log(`더한결과 : ${input_num1 + input_num2}`);
+        console.log(`더한결과 : ${Number(input_num1) + Number(input_num2)}`);
+        
+
+    </script>
+</body>
+</html>

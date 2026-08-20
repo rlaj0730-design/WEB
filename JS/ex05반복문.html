@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // while문
+        // 조건식에 제한이 있을 때
+        let num = 1;
+
+        while(num < 11) {
+            console.log('while 반복문');
+            num += 1;
+            // num = num + 1
+        }
+
+        // 조건식에 제한이 없을 때
+
+        let num1 = 1;
+
+        while(true) {
+            console.log(num1);
+            num1++;
+
+            if(num1 === 11){
+                console.log('프로그램을 종료합니다.');
+                break;
+            }
+        }
+
+        // while문 실습
+        // 숫자 누적을 하기 위해서 -> 0에 누적(복합대입 연산자 사용해보기)
+        // 선생님은 while문안에 조건문을 사용 -> if~else절 사용
+
+        // let num2 = 0;
+
+        // while(true) {
+        //     let num3 = prompt('숫자를 입력해주세요.');
+        //     num2 += Number(num3);
+        //     console.log('더한 결과' + num2);
+        
+
+        //     if(Number(num3) === 0){
+        //         console.log('최종 결과' + num2);
+        //         console.log('프로그램을 종료합니다');
+        //         break;
+        //     }
+        // }
+
+
+        // 선생님 풀이
+        // let sum = 0;
+
+        // while(true) {
+        //     let num4 = parseInt(prompt('숫자 입력'));
+
+        //     if(num4 !== 0){
+        //         sum += num4
+        //         console.log(`더한 결과 : ${sum}`);
+        //     }
+        //     else{
+        //         console.log(`최종 결과 : ${sum}`);
+        //         console.log(`프로그램을 종료하겠습니다.`);
+        //         break
+        //     }
+
+        // }
+
+        // for문
+        // 1. 초기화 2. 조건식 3. 작업 후 처리(초기화 조건식 뒤에 ; 꼭 붙여주기)
+        for(let i=1; i<=3; i++){
+            console.log(i);
+        }
+
+        // for문 예제
+        // 100~1 까지를 출력하기 (for문을 사용해서)
+        for (let j=100; j>=1; j--){
+            console.log(j);
+        }
+    </script>
+</body>
+</html>
