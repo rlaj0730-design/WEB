@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>김밥</li>
+        <li>라면</li>
+        <li>떡볶이</li>
+    </ul>
+
+    <p class="dom_p">DOM 구조</p>
+    <p class="dom_p">DOM 메소드</p>
+
+    <input type="text" name="prac" value="확인1">
+    <input type="text" name="prac" value="확인2">
+
+    <span id="span_id">본문내용 확인</span>
+
+    <script>
+        //  id값을 통해서 요소를 접근(제어말고 접근만)
+        let span_id = document.getElementById('span_id') // 메서드를 변수에 넣어서 콘솔에 쉽게 출력하기
+        console.log(span_id)
+
+        // class값을 통해서 요소를 접근
+        // HTMLCollection의 형태 -> 유사배열 형태(배열의 형태이지만 진짜 배열이 아님) -> 그래서 데이터가 하나만 있더라도 인덱스를 통해서 접근해야 한다
+        let dom_p = document.getElementsByClassName('dom_p') // 클래그 네임이 두개가 있다는걸 확인할 수 있음.
+        console.log(dom_p[0]) //클래스 네임 하나에 접근하려면 인덱스 번호를 넣으면 된다
+
+        // Tag의 이름을 통해서 요소를 접근
+        //  HTMLCollection의 형태를 가지고 있다
+        let get_li = document.getElementsByTagName('li')
+        console.log(get_li[0].innerText) // 0번 li태그의 이름 가져오기
+
+        // name값을 통해서 요소를 접근
+        // NodeList -> 유사배열 형태
+        let input_name = document.getElementsByName('prac')
+        console.log(input_name[1].value)
+
+        // 유사배열 -> 배열데이터를 반복문으로 처리
+        for(let i=0; i<input_name.length; i++){
+            console.log(input_name[i].value)
+        }
+
+        // 선택자를 통해서 접근
+        let span_id2 = document.querySelector('#span_id')
+        console.log(span_id2.innerText)
+
+        // 선택자 -> 태그 선택자 활용(태그이름)
+        // NodeList -> 유사배열 형태
+        let li_list = document.querySelectorAll('li')
+        console.log(li_list)
+    </script>
+</body>
+</html>

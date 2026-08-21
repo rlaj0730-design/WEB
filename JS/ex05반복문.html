@@ -80,6 +80,27 @@
         for (let j=100; j>=1; j--){
             console.log(j);
         }
+
+        // 짝, 홀수의 합과 숫자들을 나열하기 실습
+        let evenSum = 0;   // 짝수의 합
+        let oddSum = 0;    // 홀수의 합
+        let even = '';     // 짝수 숫자
+        let odd = '';      // 홀수 숫자
+
+        for (let k=1; k<=20; k++  ){
+            
+            if(k%2 === 0){
+                console.log(evenSum += k);
+                console.log(even += k + ' ');
+            }
+            else{
+                console.log(oddSum += k);
+                console.log(odd += k + ' ');
+            }
+        }
+
+        console.log(`${even}의 합: ${evenSum}`);
+        console.log(`${odd}의 합: ${oddSum}`);
     </script>
 </body>
 </html>

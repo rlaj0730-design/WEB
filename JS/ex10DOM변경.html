@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit">
+        <span>오늘 <strong>금요일</strong></span>
+    </h1>
+
+    <p id="num">0</p>
+    <!-- onclick  => 이벤트 타입의 한 종류(클릭) -->
+    <!-- 이벤트시 발생하는 내용들을 함수(이벤트 핸들러)로 처리 -->
+    <button onclick="increase()">증가</button>
+    <button onclick="decrease()">감소</button>
+
+    <script>
+        // 요소 접근
+        // id값을 통해서 요소를 접근해보기
+        // 접근 완료후, innerHTML, innerText 속성 사용해보기 (console에)
+        let get_id = document.getElementById('tit')
+        console.log(get_id.innerHTML)
+        console.log(get_id.innerText)
+
+        // 새로운값으로 변경하기
+        // 텍스트 + 태그를 같이 사용해서 변경하고 싶을 때 -> innerHTML
+        // get_id.innerText = '<a href="#">DOM 변경하기</a>'  --->이렇게 하면 태그랑 전부 같이 출력됨.
+        get_id.innerHTML = '<a href="https://naver.com">네이버로 이동</a>'
+
+
+        // 태그안에 이벤트 속성 값으로 호출 된 함수의 선언부 만들기(위에 버튼)
+        // const increase = () => {
+        //     console.log('증가~')
+        //     // 1. 0이라는 요소를 접근하기
+        //     // 2. 요소의 내용을 +1로 적용하여 초기화(새로운 값 씌우기)
+        //     // 3. innerText사용
+        //     // 4. 0이라는 요소를 접근 했으면 숫자형태로 변환
+            
+        //     }
+            
+        // }
+
+        // const decrease = () => {
+        //     console.log('감소~')
+        // }
+
+        // 1. 0이라는 숫자가 들어있는 요소를 가져오기 (id가 num인 요소)
+        const numElement = document.getElementById('num');
+
+        // 증가 함수
+        const increase = () => {
+        console.log('증가~');
+        
+        // 2. 요소의 현재 내용을 가져와서 숫자 형태(Number)로 변환
+        let currentNum = Number(numElement.innerText);
+        
+        // 3. 숫자를 1 증가시키기
+        currentNum = currentNum + 1; // 또는 currentNum++
+        
+        // 4. 증가된 숫자를 다시 요소의 내용(innerText)으로 적용하기
+        numElement.innerText = currentNum;
+    }
+
+        // 감소 함수
+        const decrease = () => {
+            console.log('감소~');
+            
+        // 2. 요소의 현재 내용을 가져와서 숫자 형태(Number)로 변환
+        let currentNum = Number(numElement.innerText);
+        
+        // 3. 숫자를 1 감소시키기
+        currentNum = currentNum - 1; // 또는 currentNum--
+        
+        // 4. 감소된 숫자를 다시 요소의 내용(innerText)으로 적용하기
+        numElement.innerText = currentNum;
+    }
+    </script>
+</body>
+</html>

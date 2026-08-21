@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 사용자 정의 객체(내가 만드는 객체 데이터), 내장 객체(자바스크립트 내장), 브라우저 객체, 문서 객체 --> 90프로 이상이 객체로 되어있다.
+
+        // 구조 : { key1 : value1, key2 : value2 }
+        // key : 객체의 속성(property)
+        // value : 기본자료형, 함수, 배열, 객체 등 거의 모든 자료형이 들어갈수 있다.
+
+        let person = {                 // {}를 오브젝트라고 함
+            name : '홍길동',
+            age : 20,
+            male : true,
+            intre : function() {
+                console.log('객체의 값 적용')
+            },
+            favorite : {
+                food : 'pizza',
+                drink : 'coffee' 
+            },
+            asia : ['ko', 'jp', 'ch']
+
+        }
+
+        console.log(person);
+
+        // 객체접근 => 객체변수명.key
+        console.log(`제 이름은 : ${person.name}입니다`)
+        console.log(`제 나이는 : ${person.age}살 입니다`)
+        console.log(`제 성별은 남성입니다 : ${person.male}`)
+        person.intre()
+        console.log(`제가 좋아하는 음식은 : ${person.favorite.food}입니다`)
+        console.log(`제가 살고있는 나라는 : ${person.asia[0]}입니다`)
+
+        // 객체 실습
+        let pokemon = [
+            {
+                name: '피카츄',
+                type: '전기',
+                img: 'https://data1.pokemonkorea.co.kr/newdata/pokedex/full/002501.png'
+            }, {
+                name: '따라큐',
+                type: '고스트',
+                img: 'https://data1.pokemonkorea.co.kr/newdata/pokedex/full/077801.png'
+            }, {
+                name: '고라파덕',
+                type: '물',
+                img: 'https://data1.pokemonkorea.co.kr/newdata/pokedex/full/005401.png'
+            }
+        ]
+
+        console.log(pokemon[0].name); // 배열 안에 객체가 있기 때문에 인덱스.네임
+
+        // 사용자에게 포켓몬 번호를 입력받기
+        let num = parseInt(prompt('확인할 포켓몬 (1~3)'))-1 //사용자가 1번부터 3번까지의 숫자를 입력하면 -1을 빼서 인덱스 숫자를 맞춰줌.(왜냐하면 인덱스는 0부터 시작하니까)
+
+        // 입력받은 숫자로 화면에 출력하기
+        if(num >= 0 && num < pokemon.length){ //0보다 같거나 크다는 조건을 걸어놔야 음수가 적용이 안됨.
+            // 도큐멘트는 태그를 같이 사용할 수 있다. 도큐멘트 안에서는 자동완성 안되는데 컨트롤 스페이스 누르면 뜸
+            document.write(`
+                <img width="100px" src=${pokemon[num].img}>
+                <p>${pokemon[num].name}(타입:${pokemon[num].type})</p>
+            `)
+        }else{
+            document.write(`<p>죄송합니다. 다른 번호를 눌러주세요!</p>`)  //글자 색상 바꾸고 싶으면 위 헤드 태그 안에 스타일 태그 써서 하면 된다.
+        }
+        
+    </script>
+</body>
+</html>
