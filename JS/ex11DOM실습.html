@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭 한번 해볼까요?</h1>
+    <button onclick="mkH1()">h1태그 생성</button> 
+    <button onclick="mkA()">a태그 생성</button>
+    <button onclick="mkUl()">ul태그 생성</button> 
+    <!-- div는 생성한 태그를 누적할 공간-->
+    <div id="divTag"></div>
+
+    <script>
+        // 1. 3개의 함수 선언부 생성하기
+        // 2. 내용을 누적해줄 공간인 div요소 접근하기
+        // 3. 요소 변경 시, 태그 + 텍스트 같이 적용하기 (innerxxxx)
+        // 4. 데이터를 누적할 때 -> +=(복합대입 연산자 사용)
+        const mkH1 = () => {
+            divTag.innerHTML += '<h1>DOM 활용하기!</h1>';
+        }
+        const mkA = () => {
+            divTag.innerHTML += '<a href=https://www.google.com/?hl=ko&zx=1787535013764>google로 이동!</a>';
+        }
+        const mkUl = () => {
+            divTag.innerHTML += `<ul><li>HTML</li>
+                                     <li>CSS</li>
+                                     <li>JS</li>
+                                  </ul>`  //따옴표 말고 백틱을 써야 문자가 아래로 출력됨
+        }
+        
+        let divtag = document.getElementById("divTag")
+
+
+        //선생님 풀이
+        // const mkH1 = () => {
+        //     let divVal = document.getElementById("divTag")
+        //     divVal.innerHTML += '<h1>DOM 활용하기!</h1>'
+        // }
+
+        // const mkA = () => {
+        //     let divVal = document.getElementById("divTag")
+        //     divVal.innerHTML += '<a href=https://www.google.com/?hl=ko&zx=1787535013764>google로 이동!</a>'
+        // }
+        
+        // const mkH1 = () => {
+        //     let divVal = document.getElementById("divTag")
+        //     divVal.innerHTML += `<ul>
+        //                             <li>HTML</li>
+        //                             <li>CSS</li>
+        //                             <li>JS</li>
+        //                          </ul>`
+        // }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button>순위보기</button>
+    <br><br>
+    <!-- 데이터가 출력될 공간 -->
+     <div></div>
+
+     <script>
+        // 버튼요소의 정보를 가지고오기
+        let btn = document.getElementsByTagName('button')[0]
+        console.log(btn)
+            btn.addEventListener('click',()=>{
+                let date = prompt('날짜를 입력하세요.', 'YYYYMMDD')
+                let movieUrl = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=baa094cc164fae134525f1a11a10cef0&targetDt=${date}` //매번 사이트에서 날짜 바꾸기 귀찮으니 대입 함수 사용.
+                // fetch 함수 : js에 내장되어있고, 따로 설치할 필요 X
+                // fetch 사용시 url적용을 해줘야 한다
+                // fetch 사용시 응답데이터를 json형태로 변환처리 해줘야 한다.
+                fetch(movieUrl)
+                // promise구조
+                    .then((res)=>res.json())   //then 메서드는 약속된 구조를 만든다. {}이 실행문장..then((res)=>{return res})이었는데 화살표 함수라 생략됨 
+                    .then((res)=>{
+                        console.log(res.boxOfficeResult.dailyBoxOfficeList)       // 영화 전체 데이터를 json형태의 res라는 이름으로 잘 받아왔다면 그다음 처리하겠다
+                        // movieList라는 변수 생성 후 -> 배열 데이터 담아보기
+                        let movieList = res.boxOfficeResult.dailyBoxOfficeList
+                        // 최종 형태는 테이블 형태로 출력
+                        // 테이블형태를 제작 -> 첫번째줄은 직접 작성하고
+                        // 1~10 배열데이터 -> 반복문 처리
+                        // 태그와 텍스트를 동시에 적용 -> innerHTML
+                        // div태그에 완성된 표를 출력
+                        let table = ''
+                        table += `<table>
+                                    <tr>
+                                        <th>순위</th>
+                                        <th>영화명</th>
+                                        <th>개봉일</th>
+                                    </tr>`
+
+                        for(let i=0; i<movieList.length; i++){
+                            table += `
+                            <tr>
+                                <td>${movieList[i].rank}</td>
+                                <td>${movieList[i].movieNm}</td>
+                                <td>${movieList[i].openDt}</td>
+                            </tr>`
+                         }
+                            table +=`</table>` //닫는것도 10번 반복되면 안되니까 여기씀
+                            let movieDiv = document.getElementsByTagName('div')[0]
+                            movieDiv.innerHTML = table
+                        
+                    })
+                    //에러 발생시 처리
+                    .catch((error) => {console.error(error)})  //에러가 났을때 알려주는 함수
+                })
+     </script>
+</body>
+</html>

@@ -31,51 +31,60 @@
 
 
         // 태그안에 이벤트 속성 값으로 호출 된 함수의 선언부 만들기(위에 버튼)
-        // const increase = () => {
-        //     console.log('증가~')
-        //     // 1. 0이라는 요소를 접근하기
-        //     // 2. 요소의 내용을 +1로 적용하여 초기화(새로운 값 씌우기)
-        //     // 3. innerText사용
-        //     // 4. 0이라는 요소를 접근 했으면 숫자형태로 변환
+        const increase = () => {  //선생님 풀이
+            console.log('증가~')
+            // 1. 0이라는 요소를 접근하기
+            // 2. 요소의 내용을 +1로 적용하여 초기화(새로운 값 씌우기)
+            // 3. innerText사용
+            // 4. 0이라는 요소를 접근 했으면 숫자형태로 변환
+            let num =  document.getElementById('num')
+            console.log(num.innerText) //num 아이디 부분 태그에서 0만 가져오려면 이너 텍스트 사용해야함
+            num.innerText =  parseInt(num.innerText) + 1 //정수로 바꾸고 1 더하기를 다시 변수에 대입 
             
-        //     }
-            
-        // }
+        }
 
-        // const decrease = () => {
-        //     console.log('감소~')
-        // }
-
-        // 1. 0이라는 숫자가 들어있는 요소를 가져오기 (id가 num인 요소)
-        const numElement = document.getElementById('num');
-
-        // 증가 함수
-        const increase = () => {
-        console.log('증가~');
-        
-        // 2. 요소의 현재 내용을 가져와서 숫자 형태(Number)로 변환
-        let currentNum = Number(numElement.innerText);
-        
-        // 3. 숫자를 1 증가시키기
-        currentNum = currentNum + 1; // 또는 currentNum++
-        
-        // 4. 증가된 숫자를 다시 요소의 내용(innerText)으로 적용하기
-        numElement.innerText = currentNum;
-    }
-
-        // 감소 함수
         const decrease = () => {
-            console.log('감소~');
+            //감소 버튼도 활성화 -> 음수로 떨어지면 안됨! -> 조건이 하나 더 필요
+            console.log('감소~')
+            let num =  document.getElementById('num')
             
-        // 2. 요소의 현재 내용을 가져와서 숫자 형태(Number)로 변환
-        let currentNum = Number(numElement.innerText);
+            if(parseInt(num.innerText) > 0){
+                num.innerText =  parseInt(num.innerText) - 1
+            }
+            
+                
+        }
+
+    //     // 1. 0이라는 숫자가 들어있는 요소를 가져오기 (id가 num인 요소)
+    //     const numElement = document.getElementById('num');
+
+    //     // 증가 함수
+    //     const increase = () => {
+    //     console.log('증가~');
         
-        // 3. 숫자를 1 감소시키기
-        currentNum = currentNum - 1; // 또는 currentNum--
+    //     // 2. 요소의 현재 내용을 가져와서 숫자 형태(Number)로 변환
+    //     let currentNum = Number(numElement.innerText);
         
-        // 4. 감소된 숫자를 다시 요소의 내용(innerText)으로 적용하기
-        numElement.innerText = currentNum;
-    }
+    //     // 3. 숫자를 1 증가시키기
+    //     currentNum = currentNum + 1; // 또는 currentNum++
+        
+    //     // 4. 증가된 숫자를 다시 요소의 내용(innerText)으로 적용하기
+    //     numElement.innerText = currentNum;
+    // }
+
+    //     // 감소 함수
+    //     const decrease = () => {
+    //         console.log('감소~');
+            
+    //     // 2. 요소의 현재 내용을 가져와서 숫자 형태(Number)로 변환
+    //     let currentNum = Number(numElement.innerText);
+        
+    //     // 3. 숫자를 1 감소시키기
+    //     currentNum = currentNum - 1; // 또는 currentNum--
+        
+    //     // 4. 감소된 숫자를 다시 요소의 내용(innerText)으로 적용하기
+    //     numElement.innerText = currentNum;
+    // }
     </script>
 </body>
 </html>

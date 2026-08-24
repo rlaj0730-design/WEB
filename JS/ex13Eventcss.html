@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 모든 div의 너비 100px 높이 100px
+        배경색상은 id값 참고해서 
+        */
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #redBox{background-color: red;}
+        #blueBox{background-color: blue;}
+        #greenBox{background-color: green;}
+        #grayBox{background-color: gray;}
+    </style>
+</head>
+<body>
+    <!-- <span id="spanTag">아래 버튼 클릭시, 텍스트를 변경</span>
+    <br>
+    <button>버튼 클릭</button> -->
+    <div id="redBox"></div>
+    <div id="blueBox"></div>
+    <div id="greenBox"></div>
+    <div id="grayBox"></div>
+    <button class="move">이동하기!</button>
+    <button class="radius">둥글게!</button>
+
+    <script>
+        // DOM구조에서 스타일 제어 
+        // --> 요소명(변수에 담아서).style.속성 = 값
+        // let spanTag = document.getElementById('spanTag')
+        // // 태그 선택자 적용(querySelector사용함)
+        // let btn = document.querySelector('button')
+
+        // btn.addEventListener('click', ()=>{
+        //     spanTag.style.color = 'tomato'
+        //     spanTag.style.fontSize = '30px'
+        //     spanTag.style.fontWeight = '900'
+        // })
+
+        
+        // 실습문제 : addEvent방식으로 처리하기 (이벤트타입은 click으로)
+        // 4개의 div요소의 정보를 접근하기 -> 변수에 담기
+        // 2개의 버튼요소의 정보를 접근하기 -> 변수에 담기
+
+        // 이동하기 버튼 클릭시 -> div요소들의 css를 변경
+        // margin속성, 추가로 색상변경
+
+        // 상단 우측, 하단 좌측 둥글게
+        // border, 상단(Top), 하단(Bottom)
+        // borderTopRightRadius ----- 스크립트에서 사용할땐 대문자 써야함(CSS 속성 중 border-top-right-radius처럼 대시(-)가 들어가는 이름은 자바스크립트에서 카멜케이스로 작성해야 함.)
+
+        let redBox = document.getElementById("redBox")
+        let blueBox = document.getElementById("blueBox")
+        let greenBox = document.getElementById("greenBox")
+        let grayBox = document.getElementById("grayBox")
+
+        let move = document.getElementsByClassName("move")[0]
+        let radius = document.getElementsByClassName("radius")[0]
+
+        
+
+        move.addEventListener('click', ()=>{
+            blueBox.style.marginLeft= '100px'
+            greenBox.style.marginLeft= '200px'
+            grayBox.style.marginLeft= '300px'
+            blueBox.style.backgroundColor='pink'
+            greenBox.style.backgroundColor='yellow'
+            grayBox.style.backgroundColor='orange'
+
+        })
+
+        radius.addEventListener('click', ()=>{
+             blueBox.style.marginLeft= '100px'
+            greenBox.style.marginLeft= '200px'
+            grayBox.style.marginLeft= '300px'
+
+            redBox.style.borderTopRightRadius= '50px'
+            redBox.style.borderBottomLeftRadius= '50px'
+            blueBox.style.borderTopRightRadius= '50px'
+            blueBox.style.borderBottomLeftRadius= '50px'
+            greenBox.style.borderTopRightRadius= '50px'
+            greenBox.style.borderBottomLeftRadius= '50px'
+            grayBox.style.borderTopRightRadius= '50px'
+            grayBox.style.borderBottomLeftRadius= '50px'
+        })
+
+
+        //선생님 풀이(반목문 사용)
+        // let red = document.getElementById("redBox")
+        // let blue = document.getElementById("blueBox")
+        // let green = document.getElementById("greenBox")
+        // let gray = document.getElementById("grayBox")
+
+        // let move = document.getElementsByClassName("move")[0]
+        // let radius = document.getElementsByClassName("radius")[0]
+
+        
+
+        // move.addEventListener('click', ()=>{
+        //     blueBox.style.marginLeft= '100px'
+        //     greenBox.style.marginLeft= '200px'
+        //     grayBox.style.marginLeft= '300px'
+        // })
+
+        // let divList = document.querySelectorAll('div')
+
+        // // 배열데이터를 반복처리할 때 초기화는 0
+        // for(let i=0; i<divList.length; i++){
+        //     console.log(divList[i])
+        // }
+
+        // redius.addEventListener('click', ()=>{
+        //     for(let i=0; i<divList.length; i++){
+        //         divList[i].style.webkitBorderTopRightRadius = "50%"
+        //         divList[i].style.borderBottomLeftRadius = "50%"
+        //     }
+        // })
+
+
+    </script>
+</body>
+</html>
